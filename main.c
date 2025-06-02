@@ -12,11 +12,11 @@
 // T: tommorrow
 const char timeline[7][WEEKS] = {
 	/*Su*/ "________________________________",
-	/*Mo*/ "___#__#_###_#___#___####________",
-	/*Tu*/ "___#__#_#___#___#___#__#________",
-	/*We*/ "___####_##__#___#___#__#_______T",
-	/*Th*/ "___#__#_#___#___#___#__#_______ ",
-	/*Fr*/ "___#__#_###_###_###_####_______ ",
+	/*Mo*/ "___#______#__________##_________",
+	/*Tu*/ "___#____________________________",
+	/*We*/ "___#___________________________T",
+	/*Th*/ "______#_#___#___#___#__#_______ ",
+	/*Fr*/ "______#_###_###_###_####_______ ",
 	/*Sa*/ "_______________________________ ",
 };
 const int today = 350;
@@ -36,7 +36,7 @@ void run(int val) {
 	memset(buf, 0, BUFS);
 	static int test = 0;
 
-	snprintf(buf, BUFS, "git add . && git commit -m 'Commit Position: #%d try 8' --no-edit --date=\"$(date -uRd $(date -ud '2025-01-01 + %d days' +\%Y-%s-%s))\"", test++, val+1, "%m", "%d");
+	snprintf(buf, BUFS, "git add . && git commit -m 'Commit Position: #%d try 9 masked' --no-edit --date=\"$(date -uRd $(date -ud '2025-01-01 + %d days' +\%Y-%s-%s))\"", test++, val+1, "%m", "%d");
 	FILE* outfile = fopen("command", "w");
 	fprintf(outfile, "Command: `%s`\n", buf);
 	fclose(outfile);
