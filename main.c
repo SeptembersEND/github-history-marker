@@ -36,7 +36,7 @@ void run(int val) {
 	memset(buf, 0, BUFS);
 	static int test = 0;
 
-	snprintf(buf, BUFS, "git add . && git commit -m 'Commit Position: #%d try 9 masked' --no-edit --date=\"$(date -uRd $(date -ud '2025-01-01 + %d days' +\%Y-%s-%s))\"", test++, val+1, "%m", "%d");
+	snprintf(buf, BUFS, "git add . && git commit -m 'Commit Position: #%d try 10 masked' --no-edit --date=\"$(date -uRd $(date -ud '2025-01-01 + %d days' +\%Y-%s-%s))\"", test++, val+1, "%m", "%d");
 	FILE* outfile = fopen("command", "w");
 	fprintf(outfile, "Command: `%s`\n", buf);
 	fclose(outfile);
